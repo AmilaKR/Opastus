@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.akr.amila.opastus">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/ico"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/ico"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SettingActivity"
+            android:parentActivityName=".LoginActivity"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.devPop">
+        </activity>
+        <activity
+            android:name=".AddDevice"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.devPop" />
+        <activity
+            android:name=".LoginActivity"
+            android:noHistory="false"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".SplashActivity"
+            android:noHistory="true"
+            android:theme="@style/FullTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TrackActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCVexqCGw08t62AqkEimqt0_mx82t1vWGc" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".DestinationActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/FullTheme" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity
+            android:name=".NewItem"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.devPop" />
+
+        <service android:name=".FireBaseInstanceId">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
